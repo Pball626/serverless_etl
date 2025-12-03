@@ -1,0 +1,5 @@
+requests
+pandas
+boto3
+
+# Note: pandas increases package size; for production consider lighter libs or AWS Lambda Layers.

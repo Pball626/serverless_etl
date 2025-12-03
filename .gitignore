@@ -1,0 +1,12 @@
+__pycache__/
+.env
+*.pyc
+.vscode/
+.DS_Store
+*.log
+
+# Docker
+docker-compose.override.yaml
+
+# AWS SAM build artifacts
+.aws-sam/

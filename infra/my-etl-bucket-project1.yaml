@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless ETL lambda
+Resources:
+  EtlLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: my-etl-lambda
+      Handler: handler.lambda_handler
+      Runtime: python3.10
+      CodeUri: ../lambda_function/
+      Policies:
+        - S3CrudPolicy:
+            BucketName: my-etl-bucket
+      Environment:
+        Variables:
+          S3_BUCKET: my-etl-bucket
+      Timeout: 30
+      MemorySize: 128
